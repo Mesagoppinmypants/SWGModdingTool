@@ -22,6 +22,8 @@ namespace SWGColorModTool
             InitializeComponent();
         }
 
+        SoundPlayer illuminati = new SoundPlayer(Properties.Resources.illuminati);
+
         [DllImport("User32.dll")]
         static extern int SetForegroundWindow(IntPtr point);
 
@@ -137,7 +139,7 @@ namespace SWGColorModTool
         private void Form1_Load(object sender, EventArgs e)
         {
             CloseProgramsCheckBox.Checked = Properties.Settings.Default.ClosePrograms;
-            SoundPlayer illuminati = new SoundPlayer(Properties.Resources.illuminati);
+            
             illuminati.PlayLooping();
             RebornDirTextBox.Text = Properties.Settings.Default.SWGRebornDir;
             TREDirTextBox.Text = Properties.Settings.Default.TREDir;
@@ -164,6 +166,18 @@ namespace SWGColorModTool
             {
                 ModList ml = new ModList();
                 ml.ShowDialog();
+            }
+        }
+
+        private void DisableMusicCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DisableMusicCheckBox.Checked == true)
+            {
+                illuminati.Stop();
+            }
+            else
+            {
+                illuminati.PlayLooping();
             }
         }
     }

@@ -30,7 +30,7 @@
         {
             this.ModToInstallComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DoneButton = new System.Windows.Forms.Button();
             this.BeforeComboBox = new System.Windows.Forms.ComboBox();
             this.AfterComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,6 +38,7 @@
             // 
             // ModToInstallComboBox
             // 
+            this.ModToInstallComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ModToInstallComboBox.FormattingEnabled = true;
             this.ModToInstallComboBox.Items.AddRange(new object[] {
             "Lightsaber Color"});
@@ -45,6 +46,7 @@
             this.ModToInstallComboBox.Name = "ModToInstallComboBox";
             this.ModToInstallComboBox.Size = new System.Drawing.Size(121, 21);
             this.ModToInstallComboBox.TabIndex = 0;
+            this.ModToInstallComboBox.SelectedIndexChanged += new System.EventHandler(this.ModToInstallComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -55,18 +57,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Select the mod you want to install";
             // 
-            // button1
+            // DoneButton
             // 
-            this.button1.Location = new System.Drawing.Point(101, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Done";
-            this.button1.UseVisualStyleBackColor = true;
+            this.DoneButton.Location = new System.Drawing.Point(101, 226);
+            this.DoneButton.Name = "DoneButton";
+            this.DoneButton.Size = new System.Drawing.Size(75, 23);
+            this.DoneButton.TabIndex = 2;
+            this.DoneButton.Text = "Done";
+            this.DoneButton.UseVisualStyleBackColor = true;
+            this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
             // 
             // BeforeComboBox
             // 
             this.BeforeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BeforeComboBox.Enabled = false;
             this.BeforeComboBox.FormattingEnabled = true;
             this.BeforeComboBox.Items.AddRange(new object[] {
             "Red",
@@ -81,6 +85,7 @@
             // AfterComboBox
             // 
             this.AfterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AfterComboBox.Enabled = false;
             this.AfterComboBox.FormattingEnabled = true;
             this.AfterComboBox.Items.AddRange(new object[] {
             "Red",
@@ -110,7 +115,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AfterComboBox);
             this.Controls.Add(this.BeforeComboBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.DoneButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ModToInstallComboBox);
             this.Name = "ModList";
@@ -124,7 +129,7 @@
 
         private System.Windows.Forms.ComboBox ModToInstallComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DoneButton;
         private System.Windows.Forms.ComboBox BeforeComboBox;
         private System.Windows.Forms.ComboBox AfterComboBox;
         private System.Windows.Forms.Label label2;

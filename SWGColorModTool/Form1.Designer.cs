@@ -38,6 +38,7 @@
             this.EditDirectoriesButton = new System.Windows.Forms.Button();
             this.CloseProgramsCheckBox = new System.Windows.Forms.CheckBox();
             this.InstallModsButton = new System.Windows.Forms.Button();
+            this.DisableMusicCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // StartButton
@@ -119,11 +120,23 @@
             this.InstallModsButton.UseVisualStyleBackColor = true;
             this.InstallModsButton.Click += new System.EventHandler(this.InstallModsButton_Click);
             // 
+            // DisableMusicCheckBox
+            // 
+            this.DisableMusicCheckBox.AutoSize = true;
+            this.DisableMusicCheckBox.Location = new System.Drawing.Point(180, 12);
+            this.DisableMusicCheckBox.Name = "DisableMusicCheckBox";
+            this.DisableMusicCheckBox.Size = new System.Drawing.Size(92, 17);
+            this.DisableMusicCheckBox.TabIndex = 8;
+            this.DisableMusicCheckBox.Text = "Disable Music";
+            this.DisableMusicCheckBox.UseVisualStyleBackColor = true;
+            this.DisableMusicCheckBox.CheckedChanged += new System.EventHandler(this.DisableMusicCheckBox_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.DisableMusicCheckBox);
             this.Controls.Add(this.InstallModsButton);
             this.Controls.Add(this.CloseProgramsCheckBox);
             this.Controls.Add(this.EditDirectoriesButton);
@@ -155,6 +168,7 @@
         private System.Windows.Forms.Button EditDirectoriesButton;
         private System.Windows.Forms.CheckBox CloseProgramsCheckBox;
         private System.Windows.Forms.Button InstallModsButton;
+        private System.Windows.Forms.CheckBox DisableMusicCheckBox;
     }
 }
 

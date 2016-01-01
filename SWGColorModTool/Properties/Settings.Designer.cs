@@ -58,5 +58,29 @@ namespace SWGColorModTool.Properties {
                 this["ClosePrograms"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LightsaberColorBefore {
+            get {
+                return ((string)(this["LightsaberColorBefore"]));
+            }
+            set {
+                this["LightsaberColorBefore"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LightsaberColorAfter {
+            get {
+                return ((string)(this["LightsaberColorAfter"]));
+            }
+            set {
+                this["LightsaberColorAfter"] = value;
+            }
+        }
     }
 }

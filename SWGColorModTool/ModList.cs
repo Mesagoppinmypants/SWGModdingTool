@@ -16,5 +16,29 @@ namespace SWGColorModTool
         {
             InitializeComponent();
         }
+
+        private void ModToInstallComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ModToInstallComboBox.SelectedIndex >= 0)
+            {
+                BeforeComboBox.Enabled = true;
+                AfterComboBox.Enabled = true;
+            }
+            else
+            {
+                BeforeComboBox.Enabled = false;
+                AfterComboBox.Enabled = false;
+            }
+        }
+
+        private void DoneButton_Click(object sender, EventArgs e)
+        {
+            if (ModToInstallComboBox.SelectedIndex.ToString() == "Lightsaber Color")
+            {
+                Properties.Settings.Default.LightsaberColorBefore = BeforeComboBox.SelectedIndex.ToString();
+                Properties.Settings.Default.LightsaberColorAfter = AfterComboBox.SelectedIndex.ToString();
+                Properties.Settings.Default.Save();
+            }
+        }
     }
 }
