@@ -1,0 +1,9 @@
+C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\bin\Release\SWGColorModTool.exe.config
+C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\bin\Release\SWGColorModTool.exe
+C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\bin\Release\SWGColorModTool.pdb
+C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\obj\Release\SWGColorModTool.csprojResolveAssemblyReference.cache
+C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\obj\Release\SWGColorModTool.Form1.resources
+C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\obj\Release\SWGColorModTool.Properties.Resources.resources
+C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\obj\Release\SWGColorModTool.csproj.GenerateResource.Cache
+C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\obj\Release\SWGColorModTool.exe
+C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\obj\Release\SWGColorModTool.pdb
