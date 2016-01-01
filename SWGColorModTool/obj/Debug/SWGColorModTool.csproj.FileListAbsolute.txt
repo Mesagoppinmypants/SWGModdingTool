@@ -1,1 +1,11 @@
 C:\Users\Gene\Documents\SWGColorModTool\SWGColorModTool\bin\Debug\SWGColorModTool.exe.config
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\bin\Debug\SWGColorModTool.exe.config
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\bin\Debug\SWGColorModTool.exe
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\bin\Debug\SWGColorModTool.pdb
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\obj\Debug\SWGColorModTool.csprojResolveAssemblyReference.cache
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\obj\Debug\SWGColorModTool.Form1.resources
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\obj\Debug\SWGColorModTool.Properties.Resources.resources
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\obj\Debug\SWGColorModTool.csproj.GenerateResource.Cache
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\obj\Debug\SWGColorModTool.exe
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\obj\Debug\SWGColorModTool.pdb
+C:\Users\Gene\Documents\GitHub\SWGModdingTool\SWGColorModTool\obj\Debug\SWGColorModTool.ModList.resources

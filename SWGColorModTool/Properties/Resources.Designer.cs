@@ -68,5 +68,15 @@ namespace SWGColorModTool.Properties {
                 return ResourceManager.GetStream("illuminati", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] wp_lightsaber {
+            get {
+                object obj = ResourceManager.GetObject("wp_lightsaber", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

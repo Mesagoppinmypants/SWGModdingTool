@@ -1,0 +1,132 @@
+﻿namespace SWGColorModTool
+{
+    partial class ModList
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.ModToInstallComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.BeforeComboBox = new System.Windows.Forms.ComboBox();
+            this.AfterComboBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // ModToInstallComboBox
+            // 
+            this.ModToInstallComboBox.FormattingEnabled = true;
+            this.ModToInstallComboBox.Items.AddRange(new object[] {
+            "Lightsaber Color"});
+            this.ModToInstallComboBox.Location = new System.Drawing.Point(78, 37);
+            this.ModToInstallComboBox.Name = "ModToInstallComboBox";
+            this.ModToInstallComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ModToInstallComboBox.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(61, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Select the mod you want to install";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(101, 226);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Done";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // BeforeComboBox
+            // 
+            this.BeforeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BeforeComboBox.FormattingEnabled = true;
+            this.BeforeComboBox.Items.AddRange(new object[] {
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"});
+            this.BeforeComboBox.Location = new System.Drawing.Point(12, 97);
+            this.BeforeComboBox.Name = "BeforeComboBox";
+            this.BeforeComboBox.Size = new System.Drawing.Size(76, 21);
+            this.BeforeComboBox.TabIndex = 3;
+            // 
+            // AfterComboBox
+            // 
+            this.AfterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AfterComboBox.FormattingEnabled = true;
+            this.AfterComboBox.Items.AddRange(new object[] {
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"});
+            this.AfterComboBox.Location = new System.Drawing.Point(196, 97);
+            this.AfterComboBox.Name = "AfterComboBox";
+            this.AfterComboBox.Size = new System.Drawing.Size(76, 21);
+            this.AfterComboBox.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(131, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "To";
+            // 
+            // ModList
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.AfterComboBox);
+            this.Controls.Add(this.BeforeComboBox);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ModToInstallComboBox);
+            this.Name = "ModList";
+            this.Text = "Mods To Install";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ComboBox ModToInstallComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox BeforeComboBox;
+        private System.Windows.Forms.ComboBox AfterComboBox;
+        private System.Windows.Forms.Label label2;
+    }
+}

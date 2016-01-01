@@ -52,9 +52,9 @@ namespace SWGColorModTool
 
             // TODO: Check if TRE Explorer is already running, if so, close all running ones.
 
-            Process.Start(RebornDirTextBox.Text + "\\sku0_client.toc");
-            Thread.Sleep(8000); // Wait for TRE Explorer to load
-            GoToPalette();
+            //Process.Start(RebornDirTextBox.Text + "\\sku0_client.toc");
+            //Thread.Sleep(8000); // Wait for TRE Explorer to load
+            //GoToPalette();
 
             //FirstRowTimer.Enabled = true;
             //FirstRowTimer.Start();
@@ -151,6 +151,19 @@ namespace SWGColorModTool
             {
                 Process treexplorer = Process.GetProcessesByName("TRE Explorer").FirstOrDefault();
                 treexplorer.Kill();
+            }
+        }
+
+        private void InstallModsButton_Click(object sender, EventArgs e)
+        {
+            if (Environment.UserName != "Gene") // For testing purposes, if you want to test it you can just change it to your computer name.
+            {
+                MessageBox.Show("Sorry, this function isn't implemented yet.", "Function Not Implemented");
+            }
+            else
+            {
+                ModList ml = new ModList();
+                ml.ShowDialog();
             }
         }
     }
