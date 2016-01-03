@@ -69,21 +69,186 @@ namespace SWGColorModTool
                     }
                     else
                     {
-                        MessageBox.Show("ERROR: Unable to find wp_lightsaber.pal in palette directory.");
+                        PlacePaletteFiles();
                     }
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("EXCEPTION ERROR: Something went wrong while trying to open wp_lightsaber.pal. If this error keeps occurring, please contact Iosnowore.");
                 }
+
+                //MessageBox.Show("Before: " + Properties.Settings.Default.LightsaberColorBefore + "\r\nAfter " + Properties.Settings.Default.LightsaberColorAfter);
+
+                // Begin to make mod changes
+                if (File.Exists(RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"))
+                {
+                    Thread.Sleep(3000);
+
+                    if (Properties.Settings.Default.LightsaberColorBefore == "Red")
+                    {
+                        ChangeRed();
+                    }
+                    else if (Properties.Settings.Default.LightsaberColorBefore == "Blue")
+                    {
+                        ChangeBlue();
+                    }
+                    else if (Properties.Settings.Default.LightsaberColorBefore == "Green")
+                    {
+                        ChangeGreen();
+                    }
+                    // Yellow to...
+                    if (Properties.Settings.Default.LightsaberColorBefore == "Green")
+                    {
+                        ChangeYellow();
+                    }
+                    SendKeys.SendWait("DIR {ENTER}");
+                    SendKeys.SendWait("^{s}");
+                    TreExplorer.Kill();
+
+                    if (Properties.Settings.Default.LightsaberColorBefore == "" && Properties.Settings.Default.LightsaberColorAfter == "")
+                    {
+                        MessageBox.Show("There is currently no mod to install.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERROR: File wp_lightsaber.pal not found.");
+                }
+            }
+        }
+
+        private void ChangeRed()
+        {
+            SendKeys.SendWait("{ENTER}");
+            SendKeys.SendWait("{F2}");
+            // Blue
+            if (Properties.Settings.Default.LightsaberColorAfter == "Blue")
+            {
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{DOWN}");
+                SendKeys.SendWait("{DOWN}");
             }
 
-            //Process.Start(RebornDirTextBox.Text + "\\sku0_client.toc");
-            //Thread.Sleep(8000); // Wait for TRE Explorer to load
-            //GoToPalette();
+            // Green
+            if (Properties.Settings.Default.LightsaberColorAfter == "Green")
+            {
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{DOWN}");
+            }
 
-            //FirstRowTimer.Enabled = true;
-            //FirstRowTimer.Start();
+            // Yellow
+            if (Properties.Settings.Default.LightsaberColorAfter == "Yellow")
+            {
+                SendKeys.SendWait("{RIGHT}");
+            }
+        }
+
+        private void ChangeBlue()
+        {
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{ENTER}");
+            SendKeys.SendWait("{F2}");
+            // Green
+            if (Properties.Settings.Default.LightsaberColorAfter == "Green")
+            {
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{UP}");
+            }
+
+            // Red
+            if (Properties.Settings.Default.LightsaberColorAfter == "Red")
+            {
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{UP}");
+                SendKeys.SendWait("{UP}");
+
+            }
+
+            // Yellow
+            if (Properties.Settings.Default.LightsaberColorAfter == "Yellow")
+            {
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{UP}");
+                SendKeys.SendWait("{UP}");
+            }
+        }
+
+        private void ChangeGreen()
+        {
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{ENTER}");
+            SendKeys.SendWait("{F2}");
+            // Blue
+            if (Properties.Settings.Default.LightsaberColorAfter == "Blue")
+            {
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{DOWN}");
+            }
+
+            // Red
+            if (Properties.Settings.Default.LightsaberColorAfter == "Red")
+            {
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{UP}");
+            }
+
+            // Yellow
+            if (Properties.Settings.Default.LightsaberColorAfter == "Yellow")
+            {
+                SendKeys.SendWait("{LEFT}");
+                SendKeys.SendWait("{UP}");
+            }
+        }
+
+        private void ChangeYellow()
+        {
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{RIGHT}");
+            SendKeys.SendWait("{ENTER}");
+            SendKeys.SendWait("{F2}");
+
+            // Blue
+            if (Properties.Settings.Default.LightsaberColorAfter == "Blue")
+            {
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{DOWN}");
+                SendKeys.SendWait("{DOWN}");
+            }
+
+            // Red
+            if (Properties.Settings.Default.LightsaberColorAfter == "Red")
+            {
+                SendKeys.SendWait("{LEFT}");
+            }
+
+            // Green
+            if (Properties.Settings.Default.LightsaberColorAfter == "Green")
+            {
+                SendKeys.SendWait("{RIGHT}");
+                SendKeys.SendWait("{DOWN}");
+            }
         }
 
         private void LoadNewLightsaberPal()
@@ -187,7 +352,10 @@ namespace SWGColorModTool
             {
                 TreExplorer.Kill();
             }
-            ClearSelectedMods();
+            //ClearSelectedMods();
+            Properties.Settings.Default.LightsaberColorBefore = "";
+            Properties.Settings.Default.LightsaberColorAfter = "";
+            Properties.Settings.Default.Save();
         }
 
         private void ClearSelectedMods()

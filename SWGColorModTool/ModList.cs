@@ -35,8 +35,8 @@ namespace SWGColorModTool
         {
             //if (ModToInstallComboBox.SelectedIndex.ToString() == "Lightsaber Color")
             {
-                Properties.Settings.Default.LightsaberColorBefore = BeforeComboBox.SelectedIndex.ToString();
-                Properties.Settings.Default.LightsaberColorAfter = AfterComboBox.SelectedIndex.ToString();
+                Properties.Settings.Default.LightsaberColorBefore = BeforeComboBox.Text;
+                Properties.Settings.Default.LightsaberColorAfter = AfterComboBox.Text;
                 Properties.Settings.Default.Save();
             }
             Dispose();
