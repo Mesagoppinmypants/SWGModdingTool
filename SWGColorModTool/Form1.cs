@@ -63,11 +63,18 @@ namespace SWGColorModTool
             {
                 try
                 {
-                    Process.Start(TREDirTextBox.Text + "\\TRE Explorer.exe", RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal");
+                    if (File.Exists(RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"))
+                    {
+                        Process.Start(TREDirTextBox.Text + "\\TRE Explorer.exe", RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal");
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR: Unable to find wp_lightsaber.pal in palette directory.");
+                    }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("ERROR: Something went wrong while trying to open wp_lightsaber.pal. If this error keeps occurring, please contact Iosnowore.");
+                    MessageBox.Show("EXCEPTION ERROR: Something went wrong while trying to open wp_lightsaber.pal. If this error keeps occurring, please contact Iosnowore.");
                 }
             }
 
@@ -159,6 +166,15 @@ namespace SWGColorModTool
             illuminati.PlayLooping();
             RebornDirTextBox.Text = Properties.Settings.Default.SWGRebornDir;
             TREDirTextBox.Text = Properties.Settings.Default.TREDir;
+            PlacePaletteFiles();
+        }
+
+        private void PlacePaletteFiles()
+        {
+            if (!File.Exists(RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"))
+            {
+                File.Copy(Properties.Resources.wp_lightsaber.ToString(), RebornDirTextBox.Text + "\\palette");
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
