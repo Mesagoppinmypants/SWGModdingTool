@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,9 +36,28 @@ namespace SWGColorModTool
         {
             if (ModToInstallComboBox.Text == "Lightsaber Color")
             {
-                Properties.Settings.Default.LightsaberColorBefore = BeforeComboBox.Text;
-                Properties.Settings.Default.LightsaberColorAfter = AfterComboBox.Text;
-                Properties.Settings.Default.Save();
+                if (BeforeComboBox.Text == "Red" && AfterComboBox.Text == "Red")
+                {
+                    MessageBox.Show("Sorry, you cannot change your lightsaber blade to the color red if it's already red.", "Error");
+                }
+                else if (BeforeComboBox.Text == "Blue" && AfterComboBox.Text == "Blue")
+                {
+                    MessageBox.Show("Sorry, you cannot change your lightsaber blade to the color blue if it's already blue.", "Error");
+                }
+                else if (BeforeComboBox.Text == "Green" && AfterComboBox.Text == "Green")
+                {
+                    MessageBox.Show("Sorry, you cannot change your lightsaber blade to the color green if it's already green.", "Error");
+                }
+                else if (BeforeComboBox.Text == "Yellow" && AfterComboBox.Text == "Yellow")
+                {
+                    MessageBox.Show("Sorry, you cannot change your lightsaber blade to the color yellow if it's already yellow.", "Error");
+                }
+                else
+                {
+                    Properties.Settings.Default.LightsaberColorBefore = BeforeComboBox.Text;
+                    Properties.Settings.Default.LightsaberColorAfter = AfterComboBox.Text;
+                    Properties.Settings.Default.Save();
+                }
             }
             Dispose();
         }
@@ -49,6 +69,23 @@ namespace SWGColorModTool
                 ModToInstallComboBox.Text = "Lightsaber Color";
                 BeforeComboBox.Text = Properties.Settings.Default.LightsaberColorBefore;
                 AfterComboBox.Text = Properties.Settings.Default.LightsaberColorAfter;
+            }
+        }
+
+        private void DeleteAllModsButton_Click(object sender, EventArgs e)
+        {
+            DialogResult deletemods = MessageBox.Show("Are you sure you want to delete all installed mods?", "Warning", MessageBoxButtons.YesNo);
+            if (deletemods == DialogResult.Yes)
+            {
+                string rebornDirPalette = Properties.Settings.Default.SWGRebornDir + "\\palette";
+                if (Directory.Exists(rebornDirPalette))
+                {
+                    Directory.Delete(rebornDirPalette);
+                }
+                else
+                {
+                    MessageBox.Show("No mods are currently installed.");
+                }
             }
         }
     }

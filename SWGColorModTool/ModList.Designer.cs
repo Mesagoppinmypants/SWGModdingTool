@@ -35,6 +35,7 @@
             this.BeforeComboBox = new System.Windows.Forms.ComboBox();
             this.AfterComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.DeleteAllModsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ModToInstallComboBox
@@ -60,9 +61,9 @@
             // 
             // DoneButton
             // 
-            this.DoneButton.Location = new System.Drawing.Point(101, 226);
+            this.DoneButton.Location = new System.Drawing.Point(78, 212);
             this.DoneButton.Name = "DoneButton";
-            this.DoneButton.Size = new System.Drawing.Size(75, 23);
+            this.DoneButton.Size = new System.Drawing.Size(121, 37);
             this.DoneButton.TabIndex = 2;
             this.DoneButton.Text = "Done";
             this.DoneButton.UseVisualStyleBackColor = true;
@@ -108,11 +109,22 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "To";
             // 
+            // DeleteAllModsButton
+            // 
+            this.DeleteAllModsButton.Location = new System.Drawing.Point(95, 172);
+            this.DeleteAllModsButton.Name = "DeleteAllModsButton";
+            this.DeleteAllModsButton.Size = new System.Drawing.Size(86, 34);
+            this.DeleteAllModsButton.TabIndex = 6;
+            this.DeleteAllModsButton.Text = "Delete All Mods";
+            this.DeleteAllModsButton.UseVisualStyleBackColor = true;
+            this.DeleteAllModsButton.Click += new System.EventHandler(this.DeleteAllModsButton_Click);
+            // 
             // ModList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.DeleteAllModsButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AfterComboBox);
             this.Controls.Add(this.BeforeComboBox);
@@ -139,5 +151,6 @@
         private System.Windows.Forms.ComboBox BeforeComboBox;
         private System.Windows.Forms.ComboBox AfterComboBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button DeleteAllModsButton;
     }
 }
