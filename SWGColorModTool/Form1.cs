@@ -47,21 +47,16 @@ namespace SWGColorModTool
         {
             if (!Directory.Exists(Properties.Settings.Default.SWGRebornDir) && !Directory.Exists(Properties.Settings.Default.TREDir))
             {
-                DialogResult setupdirs = MessageBox.Show("ERROR: Both your TRE Explorer directory and SWG Reborn directory are blank, would you like to configure those?", "Configure Directories", MessageBoxButtons.YesNo);
+                DialogResult setupdirs = MessageBox.Show("ERROR: Your SWG Reborn directory is blank, would you like to configure it?", "Configure SWG Reborn Directory", MessageBoxButtons.YesNo);
 
                 if (setupdirs == DialogResult.Yes)
                 {
                     ConfigRebornDir();
-                    ConfigTREDir();
                 }
             }
             else if (!Directory.Exists(Properties.Settings.Default.SWGRebornDir))
             {
                 ConfigRebornDir();
-            }
-            else if (!Directory.Exists(Properties.Settings.Default.TREDir))
-            {
-                ConfigTREDir();
             }
 
             if (!Directory.Exists(RebornDirTextBox.Text + "\\palette"))
@@ -80,7 +75,7 @@ namespace SWGColorModTool
                 {
                     if (File.Exists(RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"))
                     {
-                        Process.Start(TREDirTextBox.Text + "\\TRE Explorer.exe", RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal");
+                        Process.Start("TRE Explorer.exe", RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal");
                     }
                     else
                     {
@@ -91,8 +86,6 @@ namespace SWGColorModTool
                 {
                     MessageBox.Show("EXCEPTION ERROR: Something went wrong while trying to open wp_lightsaber.pal. If this error keeps occurring, please contact Iosnowore.");
                 }
-
-                //MessageBox.Show("Before: " + Properties.Settings.Default.LightsaberColorBefore + "\r\nAfter " + Properties.Settings.Default.LightsaberColorAfter);
 
                 // Begin to make mod changes
                 if (File.Exists(RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"))
@@ -111,8 +104,7 @@ namespace SWGColorModTool
                     {
                         ChangeGreen();
                     }
-                    // Yellow to...
-                    if (Properties.Settings.Default.LightsaberColorBefore == "Green")
+                    else if (Properties.Settings.Default.LightsaberColorBefore == "Green")
                     {
                         ChangeYellow();
                     }
@@ -267,31 +259,6 @@ namespace SWGColorModTool
             }
         }
 
-        private void LoadNewLightsaberPal()
-        {
-
-        }
-
-        private void ConfigTREDir()
-        {
-            FolderBrowserDialog browseTREDir = new FolderBrowserDialog();
-            browseTREDir = new FolderBrowserDialog();
-            browseTREDir.Description = "Please select your TRE Explorer directory.";
-            browseTREDir.ShowDialog();
-            if (File.Exists(browseTREDir.SelectedPath + "\\TRE Explorer.exe"))
-            {
-                Properties.Settings.Default.TREDir = browseTREDir.SelectedPath;
-                Properties.Settings.Default.Save();
-                TREDirTextBox.Text = Properties.Settings.Default.TREDir;
-                MessageBox.Show("You have successfully configured your TRE Explorer directory path.", "Success");
-            }
-
-            if (!File.Exists(browseTREDir.SelectedPath + "\\Tre Explorer.exe"))
-            {
-                //MessageBox.Show("ERROR: The directory that you have chosen is an invalid TRE Explorer directory.", "Error");
-            }
-        }
-
         private void ConfigRebornDir()
         {
             FolderBrowserDialog browseRebornDir = new FolderBrowserDialog();
@@ -308,14 +275,9 @@ namespace SWGColorModTool
 
             if (!File.Exists(browseRebornDir.SelectedPath + "\\SwgClient_r.exe"))
             {
-                //MessageBox.Show("ERROR: The directory that you have chosen is an invalid SWG Reborn game directory.", "Error");
+                MessageBox.Show("ERROR: The directory that you have chosen is an invalid SWG Reborn game directory.", "Error");
             }
             
-        }
-
-        private void FirstRowTimer_Tick(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -328,7 +290,6 @@ namespace SWGColorModTool
             CloseProgramsCheckBox.Checked = Properties.Settings.Default.ClosePrograms;
             illuminati.PlayLooping();
             RebornDirTextBox.Text = Properties.Settings.Default.SWGRebornDir;
-            TREDirTextBox.Text = Properties.Settings.Default.TREDir;
             Properties.Settings.Default.LightsaberColorBefore = "";
             Properties.Settings.Default.LightsaberColorAfter = "";
             PlacePaletteFiles();
