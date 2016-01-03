@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.StartButton = new System.Windows.Forms.Button();
             this.FirstRowTimer = new System.Windows.Forms.Timer(this.components);
             this.RebornDirTextBox = new System.Windows.Forms.TextBox();
@@ -146,6 +147,7 @@
             this.Controls.Add(this.RebornDirTextBox);
             this.Controls.Add(this.StartButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

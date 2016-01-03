@@ -28,6 +28,21 @@ namespace SWGColorModTool
         [DllImport("User32.dll")]
         static extern int SetForegroundWindow(IntPtr point);
 
+        private void KillTreExplorer()
+        {
+            try
+            {
+                foreach (Process proc in Process.GetProcessesByName("TRE Explorer"))
+                {
+                    proc.Kill();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void StartButton_Click(object sender, EventArgs e)
         {
             if (!Directory.Exists(Properties.Settings.Default.SWGRebornDir) && !Directory.Exists(Properties.Settings.Default.TREDir))
@@ -56,7 +71,7 @@ namespace SWGColorModTool
 
             if (TreExplorer != null) // Closes out any TRE Explorers that are already running
             {
-                TreExplorer.Kill();
+                KillTreExplorer();
             }
 
             if (Properties.Settings.Default.LightsaberColorBefore != "" || Properties.Settings.Default.LightsaberColorAfter != "")
@@ -103,7 +118,7 @@ namespace SWGColorModTool
                     }
                     SendKeys.SendWait("DIR {ENTER}");
                     SendKeys.SendWait("^{s}");
-                    TreExplorer.Kill();
+                    KillTreExplorer();
 
                     if (Properties.Settings.Default.LightsaberColorBefore == "" && Properties.Settings.Default.LightsaberColorAfter == "")
                     {
@@ -297,23 +312,6 @@ namespace SWGColorModTool
             
         }
 
-        private void GoToPalette()
-        {
-            if (TreExplorer != null)
-            {
-                IntPtr h = TreExplorer.MainWindowHandle;
-                SetForegroundWindow(h);
-                //SendKeys.SendWait("^{f}");
-                //SendKeys.SendWait("wp_lightsaber.pal");
-                //SendKeys.SendWait("{ENTER}");
-                //SendKeys.SendWait("{ESC}");
-                //SetForegroundWindow(h);
-                //SendKeys.SendWait("{DOWN}");
-                // TODO: Implement a way to select the option wanted.
-                //SendKeys.SendWait("DIR {ENTER}"); //Selects color and closes program.
-            }
-        }
-
         private void FirstRowTimer_Tick(object sender, EventArgs e)
         {
 
@@ -327,10 +325,11 @@ namespace SWGColorModTool
         private void Form1_Load(object sender, EventArgs e)
         {
             CloseProgramsCheckBox.Checked = Properties.Settings.Default.ClosePrograms;
-            
             illuminati.PlayLooping();
             RebornDirTextBox.Text = Properties.Settings.Default.SWGRebornDir;
             TREDirTextBox.Text = Properties.Settings.Default.TREDir;
+            Properties.Settings.Default.LightsaberColorBefore = "";
+            Properties.Settings.Default.LightsaberColorAfter = "";
             PlacePaletteFiles();
         }
 

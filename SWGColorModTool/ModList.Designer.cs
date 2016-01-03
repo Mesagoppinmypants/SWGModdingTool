@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModList));
             this.ModToInstallComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DoneButton = new System.Windows.Forms.Button();
@@ -118,8 +119,13 @@
             this.Controls.Add(this.DoneButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ModToInstallComboBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ModList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mods To Install";
+            this.Load += new System.EventHandler(this.ModList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
