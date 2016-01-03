@@ -59,11 +59,11 @@ namespace SWGColorModTool
                 TreExplorer.Kill();
             }
 
-            if (Properties.Settings.Default.LightsaberColorBefore != "" && Properties.Settings.Default.LightsaberColorAfter != "")
+            if (Properties.Settings.Default.LightsaberColorBefore != "" || Properties.Settings.Default.LightsaberColorAfter != "")
             {
                 try
                 {
-                    Process.Start(TREDirTextBox.Text + "\\TRE Explorer.exe", RebornDirTextBox.Text + "\\pallete\\wp_lightsaber.pal");
+                    Process.Start(TREDirTextBox.Text + "\\TRE Explorer.exe", RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal");
                 }
                 catch (Exception)
                 {
