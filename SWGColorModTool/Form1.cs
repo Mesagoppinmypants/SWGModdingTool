@@ -173,7 +173,7 @@ namespace SWGColorModTool
         {
             if (!File.Exists(RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"))
             {
-                File.Copy(Properties.Resources.wp_lightsaber.ToString(), RebornDirTextBox.Text + "\\palette");
+                // TODO: Implement a way to load wp_lightsaber palette file from Resources
             }
         }
 
