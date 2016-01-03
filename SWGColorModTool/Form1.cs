@@ -23,6 +23,7 @@ namespace SWGColorModTool
         }
 
         SoundPlayer illuminati = new SoundPlayer(Properties.Resources.illuminati);
+        Process TreExplorer = Process.GetProcessesByName("TRE Explorer").FirstOrDefault();
 
         [DllImport("User32.dll")]
         static extern int SetForegroundWindow(IntPtr point);
@@ -47,12 +48,28 @@ namespace SWGColorModTool
             {
                 ConfigTREDir();
             }
+
             if (!Directory.Exists(RebornDirTextBox.Text + "\\palette"))
             {
                 Directory.CreateDirectory(RebornDirTextBox.Text + "\\palette");
             }
 
-            // TODO: Check if TRE Explorer is already running, if so, close all running ones.
+            if (TreExplorer != null) // Closes out any TRE Explorers that are already running
+            {
+                TreExplorer.Kill();
+            }
+
+            if (Properties.Settings.Default.LightsaberColorBefore != "" && Properties.Settings.Default.LightsaberColorAfter != "")
+            {
+                try
+                {
+                    Process.Start(TREDirTextBox.Text + "\\TRE Explorer.exe", RebornDirTextBox.Text + "\\pallete\\wp_lightsaber.pal");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("ERROR: Something went wrong while trying to open wp_lightsaber.pal. If this error keeps occurring, please contact Iosnowore.");
+                }
+            }
 
             //Process.Start(RebornDirTextBox.Text + "\\sku0_client.toc");
             //Thread.Sleep(8000); // Wait for TRE Explorer to load
@@ -110,10 +127,9 @@ namespace SWGColorModTool
 
         private void GoToPalette()
         {
-            Process treexplorer = Process.GetProcessesByName("TRE Explorer").FirstOrDefault();
-            if (treexplorer != null)
+            if (TreExplorer != null)
             {
-                IntPtr h = treexplorer.MainWindowHandle;
+                IntPtr h = TreExplorer.MainWindowHandle;
                 SetForegroundWindow(h);
                 //SendKeys.SendWait("^{f}");
                 //SendKeys.SendWait("wp_lightsaber.pal");
@@ -151,9 +167,17 @@ namespace SWGColorModTool
             Properties.Settings.Default.Save();
             if (CloseProgramsCheckBox.Checked == true)
             {
-                Process treexplorer = Process.GetProcessesByName("TRE Explorer").FirstOrDefault();
-                treexplorer.Kill();
+                TreExplorer.Kill();
             }
+            ClearSelectedMods();
+        }
+
+        private void ClearSelectedMods()
+        {
+            // Resets the lightsaber color mod values
+            Properties.Settings.Default.LightsaberColorBefore = "";
+            Properties.Settings.Default.LightsaberColorAfter = "";
+            Properties.Settings.Default.Save();
         }
 
         private void InstallModsButton_Click(object sender, EventArgs e)
