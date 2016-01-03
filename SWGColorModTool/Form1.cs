@@ -84,7 +84,10 @@ namespace SWGColorModTool
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("EXCEPTION ERROR: Something went wrong while trying to open wp_lightsaber.pal. If this error keeps occurring, please contact Iosnowore.");
+                    if (!File.Exists(Application.StartupPath + "\\Resources\\wp_lightsaber.pal"))
+                    {
+                        MessageBox.Show("ERROR: Unable to install mod, you are missing a palette file", "Error: Missing .PAL File");
+                    }
                 }
 
                 // Begin to make mod changes
@@ -288,21 +291,28 @@ namespace SWGColorModTool
         private void Form1_Load(object sender, EventArgs e)
         {
             CloseProgramsCheckBox.Checked = Properties.Settings.Default.ClosePrograms;
-            illuminati.PlayLooping();
             RebornDirTextBox.Text = Properties.Settings.Default.SWGRebornDir;
             Properties.Settings.Default.LightsaberColorBefore = "";
             Properties.Settings.Default.LightsaberColorAfter = "";
+
+            illuminati.PlayLooping();
             PlacePaletteFiles();
         }
 
         private void PlacePaletteFiles()
         {
-            if (!File.Exists(RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"))
+            if (RebornDirTextBox.Text == "")
             {
-                string goUp = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\"));
-                string finalPath = goUp + "Resources\\wp_lightsaber.pal";
-                File.Copy(finalPath, RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal");
+                ConfigRebornDir(); // Needs to config the game directory before it can place the palette files
             }
+            else
+            {
+                if (!File.Exists(RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"))
+                {
+                    File.Copy(Application.StartupPath + "\\Resources\\wp_lightsaber.pal", RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal");
+                }
+            }
+            
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
