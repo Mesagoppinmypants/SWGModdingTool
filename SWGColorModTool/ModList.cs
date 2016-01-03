@@ -77,10 +77,10 @@ namespace SWGColorModTool
             DialogResult deletemods = MessageBox.Show("Are you sure you want to delete all installed mods?", "Warning", MessageBoxButtons.YesNo);
             if (deletemods == DialogResult.Yes)
             {
-                string rebornDirPalette = Properties.Settings.Default.SWGRebornDir + "\\palette";
-                if (Directory.Exists(rebornDirPalette))
+                string rebornDirPalette = Properties.Settings.Default.SWGRebornDir + "\\palette\\wp_lightsaber.pal";
+                if (File.Exists(rebornDirPalette))
                 {
-                    Directory.Delete(rebornDirPalette);
+                    File.Delete(rebornDirPalette);
                 }
                 else
                 {

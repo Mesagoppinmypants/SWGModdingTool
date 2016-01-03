@@ -119,6 +119,7 @@ namespace SWGColorModTool
                     SendKeys.SendWait("DIR {ENTER}");
                     SendKeys.SendWait("^{s}");
                     KillTreExplorer();
+                    MessageBox.Show("Mod has been successfully installed!", "Success");
 
                     if (Properties.Settings.Default.LightsaberColorBefore == "" && Properties.Settings.Default.LightsaberColorAfter == "")
                     {
@@ -367,15 +368,8 @@ namespace SWGColorModTool
 
         private void InstallModsButton_Click(object sender, EventArgs e)
         {
-            if (Environment.UserName != "Gene") // For testing purposes, if you want to test it you can just change it to your computer name.
-            {
-                MessageBox.Show("Sorry, this function isn't implemented yet.", "Function Not Implemented");
-            }
-            else
-            {
-                ModList ml = new ModList();
-                ml.ShowDialog();
-            }
+            ModList ml = new ModList();
+            ml.ShowDialog();
         }
 
         private void DisableMusicCheckBox_CheckedChanged(object sender, EventArgs e)
