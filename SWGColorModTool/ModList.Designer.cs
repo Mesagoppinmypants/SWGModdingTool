@@ -77,7 +77,7 @@
             this.BeforeComboBox.Items.AddRange(new object[] {
             "Red",
             "Blue",
-            "Green",
+            "Light Green",
             "Yellow"});
             this.BeforeComboBox.Location = new System.Drawing.Point(12, 97);
             this.BeforeComboBox.Name = "BeforeComboBox";
@@ -92,7 +92,7 @@
             this.AfterComboBox.Items.AddRange(new object[] {
             "Red",
             "Blue",
-            "Green",
+            "Light Green",
             "Yellow"});
             this.AfterComboBox.Location = new System.Drawing.Point(196, 97);
             this.AfterComboBox.Name = "AfterComboBox";

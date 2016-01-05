@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Media;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SWGColorModTool
@@ -105,7 +99,7 @@ namespace SWGColorModTool
                     }
                     else if (Properties.Settings.Default.LightsaberColorBefore == "Green")
                     {
-                        ChangeGreen();
+                        ChangeLightGreen();
                     }
                     else if (Properties.Settings.Default.LightsaberColorBefore == "Green")
                     {
@@ -197,7 +191,7 @@ namespace SWGColorModTool
             }
         }
 
-        private void ChangeGreen()
+        private void ChangeLightGreen()
         {
             SendKeys.SendWait("{RIGHT}");
             SendKeys.SendWait("{RIGHT}");
@@ -309,7 +303,7 @@ namespace SWGColorModTool
             {
                 if (!File.Exists(RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"))
                 {
-                    File.Copy(Application.StartupPath + "\\Resources\\wp_lightsaber.pal", RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal");
+                    File.Copy(Application.StartupPath + "\\Resources\\wp_lightsaber.pal", RebornDirTextBox.Text + "\\palette\\wp_lightsaber.pal"); // Instead of placing a backup file in the directory, it would be better if it was placed inside the actuall program.
                 }
             }
             

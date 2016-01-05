@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SWGColorModTool
@@ -44,7 +37,7 @@ namespace SWGColorModTool
                 {
                     MessageBox.Show("Sorry, you cannot change your lightsaber blade to the color blue if it's already blue.", "Error");
                 }
-                else if (BeforeComboBox.Text == "Green" && AfterComboBox.Text == "Green")
+                else if (BeforeComboBox.Text == "Light Green" && AfterComboBox.Text == "Light Green")
                 {
                     MessageBox.Show("Sorry, you cannot change your lightsaber blade to the color green if it's already green.", "Error");
                 }
