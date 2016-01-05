@@ -126,7 +126,7 @@ namespace SWGColorModTool
         {
             SendKeys.SendWait("{ENTER}");
             SendKeys.SendWait("{F2}");
-            // Blue
+
             if (Properties.Settings.Default.LightsaberColorAfter == "Blue")
             {
                 SendKeys.SendWait("{RIGHT}");
@@ -136,17 +136,13 @@ namespace SWGColorModTool
                 SendKeys.SendWait("{DOWN}");
                 SendKeys.SendWait("{DOWN}");
             }
-
-            // Green
-            if (Properties.Settings.Default.LightsaberColorAfter == "Green")
+            else if (Properties.Settings.Default.LightsaberColorAfter == "Green")
             {
                 SendKeys.SendWait("{RIGHT}");
                 SendKeys.SendWait("{RIGHT}");
                 SendKeys.SendWait("{DOWN}");
             }
-
-            // Yellow
-            if (Properties.Settings.Default.LightsaberColorAfter == "Yellow")
+            else if (Properties.Settings.Default.LightsaberColorAfter == "Yellow")
             {
                 SendKeys.SendWait("{RIGHT}");
             }
@@ -160,16 +156,14 @@ namespace SWGColorModTool
             SendKeys.SendWait("{RIGHT}");
             SendKeys.SendWait("{ENTER}");
             SendKeys.SendWait("{F2}");
-            // Green
+
             if (Properties.Settings.Default.LightsaberColorAfter == "Green")
             {
                 SendKeys.SendWait("{LEFT}");
                 SendKeys.SendWait("{LEFT}");
                 SendKeys.SendWait("{UP}");
             }
-
-            // Red
-            if (Properties.Settings.Default.LightsaberColorAfter == "Red")
+            else if (Properties.Settings.Default.LightsaberColorAfter == "Red")
             {
                 SendKeys.SendWait("{LEFT}");
                 SendKeys.SendWait("{LEFT}");
@@ -179,9 +173,7 @@ namespace SWGColorModTool
                 SendKeys.SendWait("{UP}");
 
             }
-
-            // Yellow
-            if (Properties.Settings.Default.LightsaberColorAfter == "Yellow")
+            else if (Properties.Settings.Default.LightsaberColorAfter == "Yellow")
             {
                 SendKeys.SendWait("{LEFT}");
                 SendKeys.SendWait("{LEFT}");
@@ -197,24 +189,20 @@ namespace SWGColorModTool
             SendKeys.SendWait("{RIGHT}");
             SendKeys.SendWait("{ENTER}");
             SendKeys.SendWait("{F2}");
-            // Blue
+
             if (Properties.Settings.Default.LightsaberColorAfter == "Blue")
             {
                 SendKeys.SendWait("{RIGHT}");
                 SendKeys.SendWait("{RIGHT}");
                 SendKeys.SendWait("{DOWN}");
             }
-
-            // Red
-            if (Properties.Settings.Default.LightsaberColorAfter == "Red")
+            else if (Properties.Settings.Default.LightsaberColorAfter == "Red")
             {
                 SendKeys.SendWait("{LEFT}");
                 SendKeys.SendWait("{LEFT}");
                 SendKeys.SendWait("{UP}");
             }
-
-            // Yellow
-            if (Properties.Settings.Default.LightsaberColorAfter == "Yellow")
+            else if (Properties.Settings.Default.LightsaberColorAfter == "Yellow")
             {
                 SendKeys.SendWait("{LEFT}");
                 SendKeys.SendWait("{UP}");
@@ -232,7 +220,6 @@ namespace SWGColorModTool
             SendKeys.SendWait("{ENTER}");
             SendKeys.SendWait("{F2}");
 
-            // Blue
             if (Properties.Settings.Default.LightsaberColorAfter == "Blue")
             {
                 SendKeys.SendWait("{RIGHT}");
@@ -241,15 +228,11 @@ namespace SWGColorModTool
                 SendKeys.SendWait("{DOWN}");
                 SendKeys.SendWait("{DOWN}");
             }
-
-            // Red
-            if (Properties.Settings.Default.LightsaberColorAfter == "Red")
+            else if (Properties.Settings.Default.LightsaberColorAfter == "Red")
             {
                 SendKeys.SendWait("{LEFT}");
             }
-
-            // Green
-            if (Properties.Settings.Default.LightsaberColorAfter == "Green")
+            else if (Properties.Settings.Default.LightsaberColorAfter == "Green")
             {
                 SendKeys.SendWait("{RIGHT}");
                 SendKeys.SendWait("{DOWN}");
