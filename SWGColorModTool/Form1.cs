@@ -97,11 +97,11 @@ namespace SWGColorModTool
                     {
                         ChangeBlue();
                     }
-                    else if (Properties.Settings.Default.LightsaberColorBefore == "Green")
+                    else if (Properties.Settings.Default.LightsaberColorBefore == "Light Green")
                     {
                         ChangeLightGreen();
                     }
-                    else if (Properties.Settings.Default.LightsaberColorBefore == "Green")
+                    else if (Properties.Settings.Default.LightsaberColorBefore == "Yellow")
                     {
                         ChangeYellow();
                     }
